@@ -62,7 +62,7 @@ function Find-UninstallGuids {
     $arguments = "/x $uninstallId /qn"
 
     try {
-      Start-Process msiexec.exe -ArgumentList $arguments
+      Start-Process msiexec.exe -ArgumentList $arguments -Wait
     } catch {
       throw $_.Exception
     }
